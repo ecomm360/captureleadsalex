@@ -220,7 +220,16 @@ class Captureleadsalex extends Module
 
     public function hookDisplayLeftColumn()
     {
-        /* Place your code here. */
+        $this->content->smarty->assign(
+            array(
+                'tittle' => l('MI PRIMER MODULO'),
+                'message' => l('Hello World!'),
+                'link_message' => l('Ir a la pagina oficial de prestashop'),
+                'link' => 'https://www.prestashop.com/es/',
+            )
+        );
+
+        return $this -> display(__FILE__,'col.tpl');
     }
 
     public function hookDisplayRightColumn()
