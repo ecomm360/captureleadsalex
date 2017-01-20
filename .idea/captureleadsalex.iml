@@ -7,10 +7,10 @@
     <orderEntry type="module-library">
       <library name="PHP">
         <CLASSES>
-          <root url="file://$MODULE_DIR$/../../PhpStorm-PrestaShop-Autocomplete-master" />
+          <root url="file://$USER_HOME$/Desktop/PhpStorm-PrestaShop-Autocomplete-master" />
         </CLASSES>
         <SOURCES>
-          <root url="file://$MODULE_DIR$/../../PhpStorm-PrestaShop-Autocomplete-master" />
+          <root url="file://$USER_HOME$/Desktop/PhpStorm-PrestaShop-Autocomplete-master" />
         </SOURCES>
       </library>
     </orderEntry>
