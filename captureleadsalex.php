@@ -229,7 +229,7 @@ class Captureleadsalex extends Module
             )
         );
 
-        return $this->display(__FILE__,'col.tpl');
+        return $this->display(__FILE__, 'col.tpl');
     }
 
     public function hookDisplayRightColumn()
