@@ -36,7 +36,7 @@ class Captureleadsalex extends Module
     {
         $this->name = 'captureleadsalex';
         $this->tab = 'administration';
-        $this->version = '1.0.0';
+        $this->version = '1.0.1';
         $this->author = 'Alex Rey Rosa';
         $this->need_instance = 0;
 
@@ -220,16 +220,16 @@ class Captureleadsalex extends Module
 
     public function hookDisplayLeftColumn()
     {
-        $this->content->smarty->assign(
+        $this->context->smarty->assign(
             array(
-                'tittle' => l('MI PRIMER MODULO'),
-                'message' => l('Hello World!'),
-                'link_message' => l('Ir a la pagina oficial de prestashop'),
-                'link' => 'https://www.prestashop.com/es/',
+                'tittle' => $this->l('MI PRIMER MODULO'),
+                'message' => $this->l('Hello World!'),
+                'link_message' => $this->l('Ir a la pagina oficial de prestashop'),
+                'link' => 'https://www.prestashop.com/es/'
             )
         );
 
-        return $this -> display(__FILE__,'col.tpl');
+        return $this->display(__FILE__,'col.tpl');
     }
 
     public function hookDisplayRightColumn()
