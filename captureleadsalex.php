@@ -218,18 +218,20 @@ class Captureleadsalex extends Module
         $this->context->controller->addCSS($this->_path.'/views/css/front.css');
     }
 
-    public function hookDisplayLeftColumn()
-    {
+    private function displayModule() {
         $this->context->smarty->assign(
             array(
-                'tittle' => $this->l('MI PRIMER MODULO'),
-                'message' => $this->l('Hello World!'),
-                'link_message' => $this->l('Ir a la pagina oficial de prestashop'),
-                'link' => 'https://www.prestashop.com/es/'
+                'tittle_txt' => $this->l('MI PRIMER MODULO'),
+                'message_txt' => $this->l('Hello World!'),
+                'link_txt' => $this->l('https://www.google.com')
             )
         );
+        return $this->display(__FILE__, 'columnas.tpl');
+    }
 
-        return $this->display(__FILE__, 'col.tpl');
+    public function hookDisplayLeftColumn()
+    {
+        return $this->displayModule();
     }
 
     public function hookDisplayRightColumn()
