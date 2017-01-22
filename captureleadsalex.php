@@ -36,7 +36,7 @@ class Captureleadsalex extends Module
     {
         $this->name = 'captureleadsalex';
         $this->tab = 'administration';
-        $this->version = '1.0.1';
+        $this->version = '1.1.0';
         $this->author = 'Alex Rey Rosa';
         $this->need_instance = 0;
 
@@ -153,6 +153,52 @@ class Captureleadsalex extends Module
                             )
                         ),
                     ),
+
+                    /*
+                     * Mostrar las el modulo en la columna izquierda.
+                     * */
+
+                    array(
+                        'type' => 'switch',
+                        'label' => $this->l('Mostrar en columna izquierda'),
+                        'name' => 'CAPTURELEADSALEX_COL_LEFT',
+                        'is_bool' => true,
+                        'values' => array(
+                            array(
+                                'id' => 'active_on',
+                                'value' => true,
+                                'label' => $this->l('Enabled')
+                            ),
+                            array(
+                                'id' => 'active_off',
+                                'value' => false,
+                                'label' => $this->l('Disabled')
+                            )
+                        ),
+                    ),
+
+                    /*
+                     * Mostrar las el modulo en la columna izquierda.
+                     * */
+
+                    array(
+                        'type' => 'switch',
+                        'label' => $this->l('Mostrar en columna derecha'),
+                        'name' => 'CAPTURELEADSALEX_COL_RIGHT',
+                        'is_bool' => true,
+                        'values' => array(
+                            array(
+                                'id' => 'active_on',
+                                'value' => true,
+                                'label' => $this->l('Enabled')
+                            ),
+                            array(
+                                'id' => 'active_off',
+                                'value' => false,
+                                'label' => $this->l('Disabled')
+                            )
+                        ),
+                    ),
                     array(
                         'col' => 3,
                         'type' => 'text',
@@ -183,6 +229,8 @@ class Captureleadsalex extends Module
             'CAPTURELEADSALEX_LIVE_MODE' => Configuration::get('CAPTURELEADSALEX_LIVE_MODE', true),
             'CAPTURELEADSALEX_ACCOUNT_EMAIL' => Configuration::get('CAPTURELEADSALEX_ACCOUNT_EMAIL', 'contact@prestashop.com'),
             'CAPTURELEADSALEX_ACCOUNT_PASSWORD' => Configuration::get('CAPTURELEADSALEX_ACCOUNT_PASSWORD', null),
+            'CAPTURELEADSALEX_COL_LEFT' => Configuration::get('CAPTURELEADSALEX_COL_LEFT', true),
+            'CAPTURELEADSALEX_COL_RIGHT' => Configuration::get('CAPTURELEADSALEX_COL_RIGHT', false)
         );
     }
 
@@ -231,11 +279,15 @@ class Captureleadsalex extends Module
 
     public function hookDisplayLeftColumn()
     {
-        return $this->displayModule();
+        if (Configuration::get('CAPTURELEADSALEX_COL_LEFT')==true) {
+            return $this->displayModule();
+        }
     }
 
     public function hookDisplayRightColumn()
     {
-        /* Place your code here. */
+        if (Configuration::get('CAPTURELEADSALEX_COL_RIGHT')==true) {
+            return $this->displayModule();
+        }
     }
 }
