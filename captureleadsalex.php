@@ -36,7 +36,7 @@ class Captureleadsalex extends Module
     {
         $this->name = 'captureleadsalex';
         $this->tab = 'administration';
-        $this->version = '3.0.0';
+        $this->version = '3.1.0';
         $this->author = 'Alex Rey Rosa';
         $this->need_instance = 0;
 

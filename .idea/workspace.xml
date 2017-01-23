@@ -21,27 +21,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="captureleadsalex.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="captureleadsalex.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/captureleadsalex.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-311">
-              <caret line="38" column="31" selection-start-line="38" selection-start-column="31" selection-end-line="38" selection-end-column="31" />
+            <state relative-caret-position="196">
+              <caret line="38" column="29" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
               <folding>
-                <marker date="1485171279829" expanded="true" signature="2675:2872" ph="CREATE TABLE... IF" />
-                <marker date="1485171279829" expanded="true" signature="3055:3100" ph="DROP TABLE $... " />
-                <marker date="1485171279829" expanded="true" signature="10085:11088" ph="SELECT MAX(i... ${_DB_PREFIX_}" />
+                <marker date="1485174636357" expanded="true" signature="2675:2872" ph="CREATE TABLE... IF" />
+                <marker date="1485174636357" expanded="true" signature="3055:3100" ph="DROP TABLE $... " />
+                <marker date="1485174636357" expanded="true" signature="10085:11088" ph="SELECT MAX(i... ${_DB_PREFIX_}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="upgrade-3.0.0.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="formDisplay.tpl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/templates/hook/formDisplay.tpl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="upgrade-3.0.0.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/upgrade/upgrade-3.0.0.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+            <state relative-caret-position="272">
+              <caret line="39" column="27" selection-start-line="39" selection-start-column="27" selection-end-line="39" selection-end-column="27" />
               <folding>
-                <marker date="1485171169510" expanded="true" signature="1409:1603" ph="CREATE TABLE... IF" />
+                <marker date="1485174646256" expanded="true" signature="1409:1603" ph="CREATE TABLE... IF" />
               </folding>
             </state>
           </provider>
@@ -91,8 +101,8 @@
         <option value="$PROJECT_DIR$/../../config/defines.inc.php" />
         <option value="$PROJECT_DIR$/upgrade/upgrade-1.1.0.php" />
         <option value="$PROJECT_DIR$/sql/install.php" />
-        <option value="$PROJECT_DIR$/upgrade/upgrade-3.0.0.php" />
         <option value="$PROJECT_DIR$/captureleadsalex.php" />
+        <option value="$PROJECT_DIR$/upgrade/upgrade-3.0.0.php" />
       </list>
     </option>
   </component>
@@ -198,21 +208,15 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="upgrade" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="captureleadsalex" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="captureleadsalex" />
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="sql" />
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hook" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -289,15 +293,15 @@
       <updated>1484828085683</updated>
       <workItem from="1484828087254" duration="943000" />
       <workItem from="1484907117221" duration="5845000" />
-      <workItem from="1485162556321" duration="6560000" />
+      <workItem from="1485162556321" duration="9808000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13348000" />
+    <option name="totallyTimeSpent" value="16596000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1374" y="-8" width="1382" height="784" extended-state="6" />
+    <frame x="-1374" y="-8" width="1382" height="784" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -341,9 +345,9 @@
         <state relative-caret-position="3927">
           <caret line="231" column="40" selection-start-line="231" selection-start-column="40" selection-end-line="231" selection-end-column="40" />
           <folding>
-            <marker date="1485171279829" expanded="true" signature="2675:2872" ph="CREATE TABLE... IF" />
-            <marker date="1485171279829" expanded="true" signature="3055:3100" ph="DROP TABLE $... " />
-            <marker date="1485171279829" expanded="true" signature="10085:11088" ph="SELECT MAX(i... ${_DB_PREFIX_}" />
+            <marker date="1485174636357" expanded="true" signature="2675:2872" ph="CREATE TABLE... IF" />
+            <marker date="1485174636357" expanded="true" signature="3055:3100" ph="DROP TABLE $... " />
+            <marker date="1485174636357" expanded="true" signature="10085:11088" ph="SELECT MAX(i... ${_DB_PREFIX_}" />
           </folding>
         </state>
       </provider>
@@ -369,9 +373,9 @@
         <state relative-caret-position="3298">
           <caret line="217" column="80" selection-start-line="217" selection-start-column="80" selection-end-line="217" selection-end-column="80" />
           <folding>
-            <marker date="1485171279829" expanded="true" signature="2675:2872" ph="CREATE TABLE... IF" />
-            <marker date="1485171279829" expanded="true" signature="3055:3100" ph="DROP TABLE $... " />
-            <marker date="1485171279829" expanded="true" signature="10085:11088" ph="SELECT MAX(i... ${_DB_PREFIX_}" />
+            <marker date="1485174636357" expanded="true" signature="2675:2872" ph="CREATE TABLE... IF" />
+            <marker date="1485174636357" expanded="true" signature="3055:3100" ph="DROP TABLE $... " />
+            <marker date="1485174636357" expanded="true" signature="10085:11088" ph="SELECT MAX(i... ${_DB_PREFIX_}" />
           </folding>
         </state>
       </provider>
@@ -471,24 +475,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/upgrade/upgrade-3.0.0.php">
+    <entry file="file://$PROJECT_DIR$/views/templates/hook/formDisplay.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding>
-            <marker date="1485171169510" expanded="true" signature="1409:1603" ph="CREATE TABLE... IF" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/captureleadsalex.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-311">
-          <caret line="38" column="31" selection-start-line="38" selection-start-column="31" selection-end-line="38" selection-end-column="31" />
+        <state relative-caret-position="196">
+          <caret line="38" column="29" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
           <folding>
-            <marker date="1485171279829" expanded="true" signature="2675:2872" ph="CREATE TABLE... IF" />
-            <marker date="1485171279829" expanded="true" signature="3055:3100" ph="DROP TABLE $... " />
-            <marker date="1485171279829" expanded="true" signature="10085:11088" ph="SELECT MAX(i... ${_DB_PREFIX_}" />
+            <marker date="1485174636357" expanded="true" signature="2675:2872" ph="CREATE TABLE... IF" />
+            <marker date="1485174636357" expanded="true" signature="3055:3100" ph="DROP TABLE $... " />
+            <marker date="1485174636357" expanded="true" signature="10085:11088" ph="SELECT MAX(i... ${_DB_PREFIX_}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/upgrade/upgrade-3.0.0.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="39" column="27" selection-start-line="39" selection-start-column="27" selection-end-line="39" selection-end-column="27" />
+          <folding>
+            <marker date="1485174646256" expanded="true" signature="1409:1603" ph="CREATE TABLE... IF" />
           </folding>
         </state>
       </provider>
