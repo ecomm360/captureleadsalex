@@ -36,7 +36,7 @@ class Captureleadsalex extends Module
     {
         $this->name = 'captureleadsalex';
         $this->tab = 'administration';
-        $this->version = '1.1.0';
+        $this->version = '2.1.2';
         $this->author = 'Alex Rey Rosa';
         $this->need_instance = 0;
 
@@ -155,12 +155,13 @@ class Captureleadsalex extends Module
                     ),
 
                     /*
-                     * Mostrar las el modulo en la columna izquierda.
+                     * Mostrar ultimos productos listados.
+                     * Con esto podremos elegir si queremos que este visible o no el modulo
                      * */
 
                     array(
                         'type' => 'switch',
-                        'label' => $this->l('Mostrar en columna izquierda'),
+                        'label' => $this->l('Mostrar ultimos productos listados'),
                         'name' => 'CAPTURELEADSALEX_COL_LEFT',
                         'is_bool' => true,
                         'values' => array(
@@ -177,28 +178,7 @@ class Captureleadsalex extends Module
                         ),
                     ),
 
-                    /*
-                     * Mostrar las el modulo en la columna izquierda.
-                     * */
 
-                    array(
-                        'type' => 'switch',
-                        'label' => $this->l('Mostrar en columna derecha'),
-                        'name' => 'CAPTURELEADSALEX_COL_RIGHT',
-                        'is_bool' => true,
-                        'values' => array(
-                            array(
-                                'id' => 'active_on',
-                                'value' => true,
-                                'label' => $this->l('Enabled')
-                            ),
-                            array(
-                                'id' => 'active_off',
-                                'value' => false,
-                                'label' => $this->l('Disabled')
-                            )
-                        ),
-                    ),
                     array(
                         'col' => 3,
                         'type' => 'text',
@@ -230,7 +210,7 @@ class Captureleadsalex extends Module
             'CAPTURELEADSALEX_ACCOUNT_EMAIL' => Configuration::get('CAPTURELEADSALEX_ACCOUNT_EMAIL', 'contact@prestashop.com'),
             'CAPTURELEADSALEX_ACCOUNT_PASSWORD' => Configuration::get('CAPTURELEADSALEX_ACCOUNT_PASSWORD', null),
             'CAPTURELEADSALEX_COL_LEFT' => Configuration::get('CAPTURELEADSALEX_COL_LEFT', true),
-            'CAPTURELEADSALEX_COL_RIGHT' => Configuration::get('CAPTURELEADSALEX_COL_RIGHT', false)
+            'CAPTURELEADSALEX_COL_RIGHT' => Configuration::get('CAPTURELEADSALEX_COL_RIGHT', false),
         );
     }
 
@@ -266,28 +246,75 @@ class Captureleadsalex extends Module
         $this->context->controller->addCSS($this->_path.'/views/css/front.css');
     }
 
-    private function displayModule() {
-        $this->context->smarty->assign(
-            array(
-                'tittle_txt' => $this->l('MI PRIMER MODULO'),
-                'message_txt' => $this->l('Hello World!'),
-                'link_txt' => $this->l('https://www.google.com')
-            )
-        );
-        return $this->display(__FILE__, 'columnas.tpl');
+    private function showLastVieweds($params) {
+        //Codigo encontrado el el modulo oficial de prestashop y modificado segun las necesisdades que proponia la pracitca
+        $productsViewed = (isset($params['cookie']->viewed) && !empty($params['cookie']->viewed)) ? array_slice(array_reverse(explode(',', $params['cookie']->viewed)), 0, 3) : array();
+        if (count($productsViewed))
+        {
+            $defaultCover = Language::getIsoById($params['cookie']->id_lang).'-default';
+            $productIds = implode(',', array_map('intval', $productsViewed));
+            $productsImages = Db::getInstance(_PS_USE_SQL_SLAVE_)->executeS('
+			SELECT MAX(image_shop.id_image) id_image, p.id_product, p.price, il.legend, product_shop.active, pl.name, pl.description_short, pl.link_rewrite, cl.link_rewrite AS category_rewrite
+			FROM '._DB_PREFIX_.'product p
+			'.Shop::addSqlAssociation('product', 'p').'
+			LEFT JOIN '._DB_PREFIX_.'product_lang pl ON (pl.id_product = p.id_product'.Shop::addSqlRestrictionOnLang('pl').')
+			LEFT JOIN '._DB_PREFIX_.'image i ON (i.id_product = p.id_product)'.
+                Shop::addSqlAssociation('image', 'i', false, 'image_shop.cover=1').'
+			LEFT JOIN '._DB_PREFIX_.'image_lang il ON (il.id_image = image_shop.id_image AND il.id_lang = '.(int)($params['cookie']->id_lang).')
+			LEFT JOIN '._DB_PREFIX_.'category_lang cl ON (cl.id_category = product_shop.id_category_default'.Shop::addSqlRestrictionOnLang('cl').')
+			WHERE p.id_product IN ('.$productIds.')
+			AND pl.id_lang = '.(int)($params['cookie']->id_lang).'
+			AND cl.id_lang = '.(int)($params['cookie']->id_lang).'
+			GROUP BY product_shop.id_product'
+            );
+            $productsImagesArray = array();
+            foreach ($productsImages as $pi)
+                $productsImagesArray[$pi['id_product']] = $pi;
+            $productsViewedObj = array();
+            foreach ($productsViewed as $productViewed)
+            {
+                $obj = (object)'Product';
+                if (!isset($productsImagesArray[$productViewed]) || (!$obj->active = $productsImagesArray[$productViewed]['active']))
+                    continue;
+                else
+                {
+                    $obj->id = (int)($productsImagesArray[$productViewed]['id_product']);
+                    $obj->id_image = (int)$productsImagesArray[$productViewed]['id_image'];
+                    $obj->precio = number_format((float)$productsImagesArray[$productViewed]['price'], 2, '.', '');
+                    $obj->cover = (int)($productsImagesArray[$productViewed]['id_product']).'-'.(int)($productsImagesArray[$productViewed]['id_image']);
+                    $obj->legend = $productsImagesArray[$productViewed]['legend'];
+                    $obj->name = $productsImagesArray[$productViewed]['name'];
+                    $obj->description_short = $productsImagesArray[$productViewed]['description_short'];
+                    $obj->link_rewrite = $productsImagesArray[$productViewed]['link_rewrite'];
+                    $obj->category_rewrite = $productsImagesArray[$productViewed]['category_rewrite'];
+                    $obj->product_link = $this->context->link->getProductLink($obj->id, $obj->link_rewrite, $obj->category_rewrite);
+                    if (!isset($obj->cover) || !$productsImagesArray[$productViewed]['id_image'])
+                    {
+                        $obj->cover = $defaultCover;
+                        $obj->legend = '';
+                    }
+                    $productsViewedObj[] = $obj;
+                }
+            }
+            if (!count($productsViewedObj))
+                return;
+            $this->smarty->assign(array(
+                'productsViewedObj' => $productsViewedObj,
+                'mediumSize' => Image::getSize('medium')));
+            return $this->display(__FILE__, 'lastViewer.tpl');
+        }
+        return;
     }
 
-    public function hookDisplayLeftColumn()
+    public function hookDisplayLeftColumn($params)
     {
         if (Configuration::get('CAPTURELEADSALEX_COL_LEFT')==true) {
-            return $this->displayModule();
+            return $this->showLastVieweds($params);
         }
     }
 
-    public function hookDisplayRightColumn()
+    public function hookDisplayRightColumn($params)
     {
-        if (Configuration::get('CAPTURELEADSALEX_COL_RIGHT')==true) {
-            return $this->displayModule();
-        }
+
     }
 }
