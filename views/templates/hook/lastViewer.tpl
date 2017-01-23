@@ -1,3 +1,5 @@
+
+<!-- Codigo prestado de la view del modulo oficial pero modificado segun las necesidades que nos propone la practica -->
 <div id="viewed-products_block_left" class="block products_block">
     <h4 class="title_block">{l s='Modulo Personalizado' mod='blockviewed'}</h4>
     <div class="block_content">

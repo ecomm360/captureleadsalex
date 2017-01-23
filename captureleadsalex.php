@@ -36,7 +36,7 @@ class Captureleadsalex extends Module
     {
         $this->name = 'captureleadsalex';
         $this->tab = 'administration';
-        $this->version = '2.1.0';
+        $this->version = '2.1.1';
         $this->author = 'Alex Rey Rosa';
         $this->need_instance = 0;
 
@@ -247,6 +247,7 @@ class Captureleadsalex extends Module
     }
 
     private function showLastVieweds($params) {
+        //Codigo encontrado el el modulo oficial de prestashop y modificado segun las necesisdades que proponia la pracitca
         $productsViewed = (isset($params['cookie']->viewed) && !empty($params['cookie']->viewed)) ? array_slice(array_reverse(explode(',', $params['cookie']->viewed)), 0, 3) : array();
         if (count($productsViewed))
         {
@@ -286,7 +287,6 @@ class Captureleadsalex extends Module
                     $obj->description_short = $productsImagesArray[$productViewed]['description_short'];
                     $obj->link_rewrite = $productsImagesArray[$productViewed]['link_rewrite'];
                     $obj->category_rewrite = $productsImagesArray[$productViewed]['category_rewrite'];
-                    // $obj is not a real product so it cannot be used as argument for getProductLink()
                     $obj->product_link = $this->context->link->getProductLink($obj->id, $obj->link_rewrite, $obj->category_rewrite);
                     if (!isset($obj->cover) || !$productsImagesArray[$productViewed]['id_image'])
                     {
