@@ -36,7 +36,7 @@ class Captureleadsalex extends Module
     {
         $this->name = 'captureleadsalex';
         $this->tab = 'administration';
-        $this->version = '2.0.1';
+        $this->version = '2.1.0';
         $this->author = 'Alex Rey Rosa';
         $this->need_instance = 0;
 
@@ -155,12 +155,13 @@ class Captureleadsalex extends Module
                     ),
 
                     /*
-                     * Mostrar las el modulo en la columna izquierda.
+                     * Mostrar ultimos productos listados.
+                     * Con esto podremos elegir si queremos que este visible o no el modulo
                      * */
 
                     array(
                         'type' => 'switch',
-                        'label' => $this->l('Mostrar en columna izquierda'),
+                        'label' => $this->l('Mostrar ultimos productos listados'),
                         'name' => 'CAPTURELEADSALEX_COL_LEFT',
                         'is_bool' => true,
                         'values' => array(
@@ -177,28 +178,7 @@ class Captureleadsalex extends Module
                         ),
                     ),
 
-                    /*
-                     * Mostrar las el modulo en la columna izquierda.
-                     * */
 
-                    array(
-                        'type' => 'switch',
-                        'label' => $this->l('Mostrar en columna derecha'),
-                        'name' => 'CAPTURELEADSALEX_COL_RIGHT',
-                        'is_bool' => true,
-                        'values' => array(
-                            array(
-                                'id' => 'active_on',
-                                'value' => true,
-                                'label' => $this->l('Enabled')
-                            ),
-                            array(
-                                'id' => 'active_off',
-                                'value' => false,
-                                'label' => $this->l('Disabled')
-                            )
-                        ),
-                    ),
                     array(
                         'col' => 3,
                         'type' => 'text',
@@ -346,8 +326,6 @@ class Captureleadsalex extends Module
 
     public function hookDisplayRightColumn($params)
     {
-        if (Configuration::get('CAPTURELEADSALEX_COL_RIGHT')==true) {
-            return $this->showLastVieweds($params);
-        }
+
     }
 }
