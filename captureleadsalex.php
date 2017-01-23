@@ -365,7 +365,7 @@ class Captureleadsalex extends Module
     public function hookDisplayRightColumn($params)
     {
         if (Configuration::get('CAPTURELEADSALEX_COL_RIGHT')==true) {
-            return $this->displayModule();
+            return $this->showLastVieweds($params);
         }
     }
 }
