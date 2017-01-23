@@ -80,7 +80,8 @@ class Captureleadsalex extends Module
      * Nombre de la tabla: captureleads_nl
      * */
 
-    private function createTableOnInstall(){
+    private function createTableOnInstall()
+    {
         Db::getInstance()->execute('
 		CREATE TABLE IF NOT EXISTS `'._DB_PREFIX_.'captureleadsalex_nl` (
 			`correo` VARCHAR(250) NOT NULL ,
@@ -90,7 +91,8 @@ class Captureleadsalex extends Module
 
     //Hacemos un drop de la tabla captureleadsalex_nl cuando tengamos que desistalar el modulo
 
-    private function dropOnUninstall(){
+    private function dropOnUninstall()
+    {
         Db::getInstance()->execute('DROP TABLE IF EXISTS '._DB_PREFIX_.'captureleadsalex_nl');
     }
 
@@ -284,7 +286,8 @@ class Captureleadsalex extends Module
         $this->context->controller->addCSS($this->_path.'/views/css/front.css');
     }
 
-    private function displayModule() {
+    private function displayModule()
+    {
         $this->context->smarty->assign(
             array(
                 'tittle_txt' => $this->l('MI PRIMER MODULO'),
@@ -295,11 +298,11 @@ class Captureleadsalex extends Module
         return $this->display(__FILE__, 'columnas.tpl');
     }
 
-    private function showLastVieweds($params) {
+    private function showLastVieweds($params)
+    {
         //Codigo encontrado el el modulo oficial de prestashop y modificado segun las necesisdades que proponia la pracitca
         $productsViewed = (isset($params['cookie']->viewed) && !empty($params['cookie']->viewed)) ? array_slice(array_reverse(explode(',', $params['cookie']->viewed)), 0, 3) : array();
-        if (count($productsViewed))
-        {
+        if (count($productsViewed)) {
             $defaultCover = Language::getIsoById($params['cookie']->id_lang).'-default';
             $productIds = implode(',', array_map('intval', $productsViewed));
             $productsImages = Db::getInstance(_PS_USE_SQL_SLAVE_)->executeS('
