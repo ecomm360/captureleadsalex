@@ -91,7 +91,7 @@ class Captureleadsalex extends Module
     //Hacemos un drop de la tabla captureleadsalex_nl cuando tengamos que desistalar el modulo
 
     private function dropOnUninstall(){
-        Db::getInstance()->execute('DROP TABLE '._DB_PREFIX_.'captureleadsalex_nl');
+        Db::getInstance()->execute('DROP TABLE IF EXISTS '._DB_PREFIX_.'captureleadsalex_nl');
     }
 
     /**

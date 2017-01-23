@@ -24,23 +24,37 @@
       <file leaf-file-name="captureleadsalex.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/captureleadsalex.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="268" column="6" lean-forward="true" selection-start-line="268" selection-start-column="6" selection-end-line="268" selection-end-column="6" />
+            <state relative-caret-position="1190">
+              <caret line="93" column="47" lean-forward="false" selection-start-line="93" selection-start-column="47" selection-end-line="93" selection-end-column="47" />
               <folding>
-                <marker date="1485203056349" expanded="true" signature="2675:2872" ph="CREATE TABLE... IF" />
-                <marker date="1485203056349" expanded="true" signature="3055:3100" ph="DROP TABLE $... " />
-                <marker date="1485203056349" expanded="true" signature="11299:12302" ph="SELECT MAX(i... ${_DB_PREFIX_}" />
+                <marker date="1485205893505" expanded="true" signature="2675:2872" ph="CREATE TABLE... IF" />
+                <marker date="1485205893505" expanded="true" signature="3055:3110" ph="DROP TABLE $... " />
+                <marker date="1485205893505" expanded="true" signature="11309:12312" ph="SELECT MAX(i... ${_DB_PREFIX_}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="formDisplay.tpl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/templates/hook/formDisplay.tpl">
+      <file leaf-file-name="back.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/js/back.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="442">
+              <caret line="26" column="3" lean-forward="false" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="3" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="front.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/js/front.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="26" column="3" lean-forward="false" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="3" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -48,9 +62,10 @@
       <file leaf-file-name="install.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sql/install.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
+            <state relative-caret-position="476">
               <caret line="28" column="69" lean-forward="false" selection-start-line="28" selection-start-column="69" selection-end-line="28" selection-end-column="69" />
               <folding>
+                <element signature="e#6#976#0#PHP" expanded="true" />
                 <marker date="1485201678808" expanded="true" signature="1005:1216" ph="CREATE TABLE... IF" />
               </folding>
             </state>
@@ -62,16 +77,18 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+              <folding>
+                <element signature="e#6#976#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="lastViewer.tpl" pinned="false" current-in-tab="true">
+      <file leaf-file-name="lastViewer.tpl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/templates/hook/lastViewer.tpl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="34" column="32" lean-forward="true" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -97,6 +114,8 @@
         <option value="$PROJECT_DIR$/upgrade/upgrade-3.0.0.php" />
         <option value="$PROJECT_DIR$/captureleadsalex.php" />
         <option value="$PROJECT_DIR$/views/templates/hook/lastViewer.tpl" />
+        <option value="$PROJECT_DIR$/views/js/back.js" />
+        <option value="$PROJECT_DIR$/views/js/front.js" />
       </list>
     </option>
   </component>
@@ -141,6 +160,78 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="captureleadsalex" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="captureleadsalex" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="captureleadsalex" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="captureleadsalex" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="captureleadsalex" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="captureleadsalex" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="captureleadsalex" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hook" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="captureleadsalex" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="captureleadsalex" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -244,12 +335,13 @@
       <workItem from="1484828087254" duration="943000" />
       <workItem from="1484907117221" duration="5845000" />
       <workItem from="1485162556321" duration="9808000" />
-      <workItem from="1485201999051" duration="3582000" />
+      <workItem from="1485201999051" duration="3657000" />
+      <workItem from="1485205764698" duration="415000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20178000" />
+    <option name="totallyTimeSpent" value="20668000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -296,13 +388,21 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/captureleadsalex.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4165">
+          <caret line="268" column="6" lean-forward="false" selection-start-line="268" selection-start-column="6" selection-end-line="268" selection-end-column="6" />
+          <folding>
+            <marker date="1485205893505" expanded="true" signature="2675:2872" ph="CREATE TABLE... IF" />
+            <marker date="1485205893505" expanded="true" signature="3055:3110" ph="DROP TABLE $... " />
+            <marker date="1485205893505" expanded="true" signature="11309:12312" ph="SELECT MAX(i... ${_DB_PREFIX_}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/templates/hook/formDisplay.tpl">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1485203056349" expanded="true" signature="2675:2872" ph="CREATE TABLE... IF" />
-            <marker date="1485203056349" expanded="true" signature="3055:3100" ph="DROP TABLE $... " />
-            <marker date="1485203056349" expanded="true" signature="11299:12302" ph="SELECT MAX(i... ${_DB_PREFIX_}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -311,6 +411,7 @@
         <state relative-caret-position="85">
           <caret line="28" column="69" lean-forward="false" selection-start-line="28" selection-start-column="69" selection-end-line="28" selection-end-column="69" />
           <folding>
+            <element signature="e#6#976#0#PHP" expanded="true" />
             <marker date="1485201678808" expanded="true" signature="1005:1216" ph="CREATE TABLE... IF" />
           </folding>
         </state>
@@ -320,7 +421,50 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#6#976#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/templates/hook/lastViewer.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/captureleadsalex.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1485205893505" expanded="true" signature="2675:2872" ph="CREATE TABLE... IF" />
+            <marker date="1485205893505" expanded="true" signature="3055:3110" ph="DROP TABLE $... " />
+            <marker date="1485205893505" expanded="true" signature="11309:12312" ph="SELECT MAX(i... ${_DB_PREFIX_}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sql/install.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="28" column="69" lean-forward="false" selection-start-line="28" selection-start-column="69" selection-end-line="28" selection-end-column="69" />
+          <folding>
+            <element signature="e#6#976#0#PHP" expanded="true" />
+            <marker date="1485201678808" expanded="true" signature="1005:1216" ph="CREATE TABLE... IF" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sql/uninstall.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#6#976#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -337,9 +481,9 @@
         <state relative-caret-position="3927">
           <caret line="231" column="40" lean-forward="false" selection-start-line="231" selection-start-column="40" selection-end-line="231" selection-end-column="40" />
           <folding>
-            <marker date="1485203056349" expanded="true" signature="2675:2872" ph="CREATE TABLE... IF" />
-            <marker date="1485203056349" expanded="true" signature="3055:3100" ph="DROP TABLE $... " />
-            <marker date="1485203056349" expanded="true" signature="11299:12302" ph="SELECT MAX(i... ${_DB_PREFIX_}" />
+            <marker date="1485205893505" expanded="true" signature="2675:2872" ph="CREATE TABLE... IF" />
+            <marker date="1485205893505" expanded="true" signature="3055:3110" ph="DROP TABLE $... " />
+            <marker date="1485205893505" expanded="true" signature="11309:12312" ph="SELECT MAX(i... ${_DB_PREFIX_}" />
           </folding>
         </state>
       </provider>
@@ -348,7 +492,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="833">
           <caret line="49" column="1" lean-forward="false" selection-start-line="49" selection-start-column="1" selection-end-line="49" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -358,29 +501,15 @@
         <state relative-caret-position="3298">
           <caret line="217" column="80" lean-forward="false" selection-start-line="217" selection-start-column="80" selection-end-line="217" selection-end-column="80" />
           <folding>
-            <marker date="1485203056349" expanded="true" signature="2675:2872" ph="CREATE TABLE... IF" />
-            <marker date="1485203056349" expanded="true" signature="3055:3100" ph="DROP TABLE $... " />
-            <marker date="1485203056349" expanded="true" signature="11299:12302" ph="SELECT MAX(i... ${_DB_PREFIX_}" />
+            <marker date="1485205893505" expanded="true" signature="2675:2872" ph="CREATE TABLE... IF" />
+            <marker date="1485205893505" expanded="true" signature="3055:3110" ph="DROP TABLE $... " />
+            <marker date="1485205893505" expanded="true" signature="11309:12312" ph="SELECT MAX(i... ${_DB_PREFIX_}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/templates/hook/col.tpl" />
     <entry file="file://$PROJECT_DIR$/../../PhpStorm-PrestaShop-Autocomplete-master/autocomplete.php" />
-    <entry file="file://$PROJECT_DIR$/views/js/back.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/js/front.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/css/front.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -416,7 +545,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="49" column="1" lean-forward="false" selection-start-line="49" selection-start-column="1" selection-end-line="49" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -424,7 +552,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="39" column="27" lean-forward="false" selection-start-line="39" selection-start-column="27" selection-end-line="39" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -432,19 +559,28 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#6#976#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/captureleadsalex.php">
+    <entry file="file://$PROJECT_DIR$/sql/install.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="268" column="6" lean-forward="true" selection-start-line="268" selection-start-column="6" selection-end-line="268" selection-end-column="6" />
+        <state relative-caret-position="476">
+          <caret line="28" column="69" lean-forward="false" selection-start-line="28" selection-start-column="69" selection-end-line="28" selection-end-column="69" />
           <folding>
-            <marker date="1485203056349" expanded="true" signature="2675:2872" ph="CREATE TABLE... IF" />
-            <marker date="1485203056349" expanded="true" signature="3055:3100" ph="DROP TABLE $... " />
-            <marker date="1485203056349" expanded="true" signature="11299:12302" ph="SELECT MAX(i... ${_DB_PREFIX_}" />
+            <element signature="e#6#976#0#PHP" expanded="true" />
+            <marker date="1485201678808" expanded="true" signature="1005:1216" ph="CREATE TABLE... IF" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/templates/hook/lastViewer.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -456,21 +592,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sql/install.php">
+    <entry file="file://$PROJECT_DIR$/captureleadsalex.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="28" column="69" lean-forward="false" selection-start-line="28" selection-start-column="69" selection-end-line="28" selection-end-column="69" />
+        <state relative-caret-position="1190">
+          <caret line="93" column="47" lean-forward="false" selection-start-line="93" selection-start-column="47" selection-end-line="93" selection-end-column="47" />
           <folding>
-            <marker date="1485201678808" expanded="true" signature="1005:1216" ph="CREATE TABLE... IF" />
+            <marker date="1485205893505" expanded="true" signature="2675:2872" ph="CREATE TABLE... IF" />
+            <marker date="1485205893505" expanded="true" signature="3055:3110" ph="DROP TABLE $... " />
+            <marker date="1485205893505" expanded="true" signature="11309:12312" ph="SELECT MAX(i... ${_DB_PREFIX_}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/templates/hook/lastViewer.tpl">
+    <entry file="file://$PROJECT_DIR$/views/js/back.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" column="32" lean-forward="true" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
-          <folding />
+        <state relative-caret-position="442">
+          <caret line="26" column="3" lean-forward="false" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="3" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/js/front.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="3" lean-forward="false" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="3" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
