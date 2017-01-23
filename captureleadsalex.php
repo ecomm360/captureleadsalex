@@ -36,7 +36,7 @@ class Captureleadsalex extends Module
     {
         $this->name = 'captureleadsalex';
         $this->tab = 'administration';
-        $this->version = '2.1.2';
+        $this->version = '3.0.0';
         $this->author = 'Alex Rey Rosa';
         $this->need_instance = 0;
 
@@ -60,7 +60,7 @@ class Captureleadsalex extends Module
     public function install()
     {
         Configuration::updateValue('CAPTURELEADSALEX_LIVE_MODE', false);
-
+        $this->createTableOnInstall();
         return parent::install() &&
             $this->registerHook('header') &&
             $this->registerHook('backOfficeHeader') &&
@@ -71,8 +71,27 @@ class Captureleadsalex extends Module
     public function uninstall()
     {
         Configuration::deleteByName('CAPTURELEADSALEX_LIVE_MODE');
-
+        $this->dropOnUninstall();
         return parent::uninstall();
+    }
+
+    /*
+     * Creamos la tabla para almacenar los correos del NewsLetter
+     * Nombre de la tabla: captureleads_nl
+     * */
+
+    private function createTableOnInstall(){
+        Db::getInstance()->execute('
+		CREATE TABLE IF NOT EXISTS `'._DB_PREFIX_.'captureleadsalex_nl` (
+			`correo` VARCHAR(250) NOT NULL ,
+            PRIMARY KEY (`correo`)
+            ) ENGINE='._MYSQL_ENGINE_.' default CHARSET=utf8');
+    }
+
+    //Hacemos un drop de la tabla captureleadsalex_nl cuando tengamos que desistalar el modulo
+
+    private function dropOnUninstall(){
+        Db::getInstance()->execute('DROP TABLE '._DB_PREFIX_.'captureleadsalex_nl');
     }
 
     /**
