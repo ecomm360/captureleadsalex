@@ -36,7 +36,7 @@ class Captureleadsalex extends Module
     {
         $this->name = 'captureleadsalex';
         $this->tab = 'administration';
-        $this->version = '2.1.1';
+        $this->version = '2.1.2';
         $this->author = 'Alex Rey Rosa';
         $this->need_instance = 0;
 
@@ -304,17 +304,6 @@ class Captureleadsalex extends Module
             return $this->display(__FILE__, 'lastViewer.tpl');
         }
         return;
-    }
-
-    private function displayModule() {
-        $this->context->smarty->assign(
-            array(
-                'tittle_txt' => $this->l('MI PRIMER MODULO'),
-                'message_txt' => $this->l('Hello World!'),
-                'link_txt' => $this->l('https://www.google.com')
-            )
-        );
-        return $this->display(__FILE__, 'columnas.tpl');
     }
 
     public function hookDisplayLeftColumn($params)
