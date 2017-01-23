@@ -36,7 +36,7 @@ class Captureleadsalex extends Module
     {
         $this->name = 'captureleadsalex';
         $this->tab = 'administration';
-        $this->version = '1.1.0';
+        $this->version = '2.0.0';
         $this->author = 'Alex Rey Rosa';
         $this->need_instance = 0;
 
@@ -231,7 +231,6 @@ class Captureleadsalex extends Module
             'CAPTURELEADSALEX_ACCOUNT_PASSWORD' => Configuration::get('CAPTURELEADSALEX_ACCOUNT_PASSWORD', null),
             'CAPTURELEADSALEX_COL_LEFT' => Configuration::get('CAPTURELEADSALEX_COL_LEFT', true),
             'CAPTURELEADSALEX_COL_RIGHT' => Configuration::get('CAPTURELEADSALEX_COL_RIGHT', false),
-            'CAPTURELEADSALEX_DIS_ITEMS_COUNT' => Configuration::get('CAPTURELEADSALEX_DIS_ITEMS_COUNT', 3)
         );
     }
 
@@ -268,13 +267,13 @@ class Captureleadsalex extends Module
     }
 
     private function showLastVieweds($params) {
-        $productsViewed = (isset($params['cookie']->viewed) && !empty($params['cookie']->viewed)) ? array_slice(array_reverse(explode(',', $params['cookie']->viewed)), 0, Configuration::get('CAPTURELEADSALEX_DIS_ITEMS_COUNT')) : array();
+        $productsViewed = (isset($params['cookie']->viewed) && !empty($params['cookie']->viewed)) ? array_slice(array_reverse(explode(',', $params['cookie']->viewed)), 0, 3) : array();
         if (count($productsViewed))
         {
             $defaultCover = Language::getIsoById($params['cookie']->id_lang).'-default';
             $productIds = implode(',', array_map('intval', $productsViewed));
             $productsImages = Db::getInstance(_PS_USE_SQL_SLAVE_)->executeS('
-			SELECT MAX(image_shop.id_image) id_image, p.id_product, il.legend, product_shop.active, pl.name, pl.description_short, pl.link_rewrite, cl.link_rewrite AS category_rewrite
+			SELECT MAX(image_shop.id_image) id_image, p.id_product, p.price, il.legend, product_shop.active, pl.name, pl.description_short, pl.link_rewrite, cl.link_rewrite AS category_rewrite
 			FROM '._DB_PREFIX_.'product p
 			'.Shop::addSqlAssociation('product', 'p').'
 			LEFT JOIN '._DB_PREFIX_.'product_lang pl ON (pl.id_product = p.id_product'.Shop::addSqlRestrictionOnLang('pl').')
@@ -300,6 +299,7 @@ class Captureleadsalex extends Module
                 {
                     $obj->id = (int)($productsImagesArray[$productViewed]['id_product']);
                     $obj->id_image = (int)$productsImagesArray[$productViewed]['id_image'];
+                    $obj->precio = number_format((float)$productsImagesArray[$productViewed]['price'], 2, '.', '');
                     $obj->cover = (int)($productsImagesArray[$productViewed]['id_product']).'-'.(int)($productsImagesArray[$productViewed]['id_image']);
                     $obj->legend = $productsImagesArray[$productViewed]['legend'];
                     $obj->name = $productsImagesArray[$productViewed]['name'];
