@@ -174,14 +174,33 @@ class Captureleadsalex extends Module
                     ),
 
                     /*
-                     * Mostrar ultimos productos listados.
-                     * Con esto podremos elegir si queremos que este visible o no el modulo
+                     * Mostrar las el modulo en la columna izquierda.
                      * */
-
                     array(
                         'type' => 'switch',
-                        'label' => $this->l('Mostrar ultimos productos listados'),
+                        'label' => $this->l('Mostrar en columna izquierda'),
                         'name' => 'CAPTURELEADSALEX_COL_LEFT',
+                        'is_bool' => true,
+                        'values' => array(
+                            array(
+                                'id' => 'active_on',
+                                'value' => true,
+                                'label' => $this->l('Enabled')
+                            ),
+                            array(
+                                'id' => 'active_off',
+                                'value' => false,
+                                'label' => $this->l('Disabled')
+                            )
+                        ),
+                    ),
+                    /*
+                     * Mostrar las el modulo en la columna izquierda.
+                     * */
+                    array(
+                        'type' => 'switch',
+                        'label' => $this->l('Mostrar en columna derecha'),
+                        'name' => 'CAPTURELEADSALEX_COL_RIGHT',
                         'is_bool' => true,
                         'values' => array(
                             array(
@@ -265,6 +284,17 @@ class Captureleadsalex extends Module
         $this->context->controller->addCSS($this->_path.'/views/css/front.css');
     }
 
+    private function displayModule() {
+        $this->context->smarty->assign(
+            array(
+                'tittle_txt' => $this->l('MI PRIMER MODULO'),
+                'message_txt' => $this->l('Hello World!'),
+                'link_txt' => $this->l('https://www.google.com')
+            )
+        );
+        return $this->display(__FILE__, 'columnas.tpl');
+    }
+
     private function showLastVieweds($params) {
         //Codigo encontrado el el modulo oficial de prestashop y modificado segun las necesisdades que proponia la pracitca
         $productsViewed = (isset($params['cookie']->viewed) && !empty($params['cookie']->viewed)) ? array_slice(array_reverse(explode(',', $params['cookie']->viewed)), 0, 3) : array();
@@ -334,6 +364,8 @@ class Captureleadsalex extends Module
 
     public function hookDisplayRightColumn($params)
     {
-
+        if (Configuration::get('CAPTURELEADSALEX_COL_RIGHT')==true) {
+            return $this->displayModule();
+        }
     }
 }
