@@ -36,7 +36,7 @@ class Captureleadsalex extends Module
     {
         $this->name = 'captureleadsalex';
         $this->tab = 'administration';
-        $this->version = '2.1.2';
+        $this->version = '3.1.0';
         $this->author = 'Alex Rey Rosa';
         $this->need_instance = 0;
 
@@ -60,7 +60,7 @@ class Captureleadsalex extends Module
     public function install()
     {
         Configuration::updateValue('CAPTURELEADSALEX_LIVE_MODE', false);
-
+        $this->createTableOnInstall();
         return parent::install() &&
             $this->registerHook('header') &&
             $this->registerHook('backOfficeHeader') &&
@@ -71,8 +71,29 @@ class Captureleadsalex extends Module
     public function uninstall()
     {
         Configuration::deleteByName('CAPTURELEADSALEX_LIVE_MODE');
-
+        $this->dropOnUninstall();
         return parent::uninstall();
+    }
+
+    /*
+     * Creamos la tabla para almacenar los correos del NewsLetter
+     * Nombre de la tabla: captureleads_nl
+     * */
+
+    private function createTableOnInstall()
+    {
+        Db::getInstance()->execute('
+		CREATE TABLE IF NOT EXISTS `'._DB_PREFIX_.'captureleadsalex_nl` (
+			`correo` VARCHAR(250) NOT NULL ,
+            PRIMARY KEY (`correo`)
+            ) ENGINE='._MYSQL_ENGINE_.' default CHARSET=utf8');
+    }
+
+    //Hacemos un drop de la tabla captureleadsalex_nl cuando tengamos que desistalar el modulo
+
+    private function dropOnUninstall()
+    {
+        Db::getInstance()->execute('DROP TABLE IF EXISTS '._DB_PREFIX_.'captureleadsalex_nl');
     }
 
     /**
@@ -155,14 +176,33 @@ class Captureleadsalex extends Module
                     ),
 
                     /*
-                     * Mostrar ultimos productos listados.
-                     * Con esto podremos elegir si queremos que este visible o no el modulo
+                     * Mostrar las el modulo en la columna izquierda.
                      * */
-
                     array(
                         'type' => 'switch',
-                        'label' => $this->l('Mostrar ultimos productos listados'),
+                        'label' => $this->l('Mostrar en columna izquierda'),
                         'name' => 'CAPTURELEADSALEX_COL_LEFT',
+                        'is_bool' => true,
+                        'values' => array(
+                            array(
+                                'id' => 'active_on',
+                                'value' => true,
+                                'label' => $this->l('Enabled')
+                            ),
+                            array(
+                                'id' => 'active_off',
+                                'value' => false,
+                                'label' => $this->l('Disabled')
+                            )
+                        ),
+                    ),
+                    /*
+                     * Mostrar las el modulo en la columna izquierda.
+                     * */
+                    array(
+                        'type' => 'switch',
+                        'label' => $this->l('Mostrar en columna derecha'),
+                        'name' => 'CAPTURELEADSALEX_COL_RIGHT',
                         'is_bool' => true,
                         'values' => array(
                             array(
@@ -246,11 +286,23 @@ class Captureleadsalex extends Module
         $this->context->controller->addCSS($this->_path.'/views/css/front.css');
     }
 
-    private function showLastVieweds($params) {
+    private function displayModule()
+    {
+        $this->context->smarty->assign(
+            array(
+                'tittle_txt' => $this->l('MI PRIMER MODULO'),
+                'message_txt' => $this->l('Hello World!'),
+                'link_txt' => $this->l('https://www.google.com')
+            )
+        );
+        return $this->display(__FILE__, 'columnas.tpl');
+    }
+
+    private function showLastVieweds($params)
+    {
         //Codigo encontrado el el modulo oficial de prestashop y modificado segun las necesisdades que proponia la pracitca
         $productsViewed = (isset($params['cookie']->viewed) && !empty($params['cookie']->viewed)) ? array_slice(array_reverse(explode(',', $params['cookie']->viewed)), 0, 3) : array();
-        if (count($productsViewed))
-        {
+        if (count($productsViewed)) {
             $defaultCover = Language::getIsoById($params['cookie']->id_lang).'-default';
             $productIds = implode(',', array_map('intval', $productsViewed));
             $productsImages = Db::getInstance(_PS_USE_SQL_SLAVE_)->executeS('
@@ -315,6 +367,8 @@ class Captureleadsalex extends Module
 
     public function hookDisplayRightColumn($params)
     {
-
+        if (Configuration::get('CAPTURELEADSALEX_COL_RIGHT')==true) {
+            return $this->showLastVieweds($params);
+        }
     }
 }
